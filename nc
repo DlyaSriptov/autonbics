@@ -4,7 +4,7 @@ sed -i -e 's/dhcp4: yes/dhcp4: no/' /etc/netplan/01-netcfg.yaml
 
 sed -i -e '8a\      addresses: [91.221.70.147/23]'  /etc/netplan/01-netcfg.yaml
 sed -i -e '9a\      gateway4: 91.221.70.1'  /etc/netplan/01-netcfg.yaml
-sed -i -e '10a\      namesrevers:'  /etc/netplan/01-netcfg.yaml
+sed -i -e '10a\      nameservers:'  /etc/netplan/01-netcfg.yaml
 sed -i -e '11a\        addresses: [91.221.70.1, 91.221.71.1]'  /etc/netplan/01-netcfg.yaml
 
 netplan --debug generate
