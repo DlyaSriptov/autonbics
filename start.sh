@@ -38,30 +38,33 @@ done
 echo -n > ./autonbics/scripts/delta.sh
 echo '#!/bin/bash' >> ./autonbics/scripts/delta.sh
 
-function set_netconf {
+function set_netconf() {
 
 }
 
-function set_jitsi {
+function set_jitsi() {
 
 }
 
-function set_nbics {
+function set_nbics() {
 
 }
 
 if [[ $q_netconf = Y ]]
 then
+    set_netconf()
     echo 'source ./autonbics/scripts/netconf.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
 if [[ $q_jitsi = Y ]]
 then
+    set_jitsi()
     echo 'source ./autonbics/scripts/jitsi_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
 if [[ $q_nbics = Y ]]
 then
+    set_nbics()
     echo 'source ./autonbics/scripts/nbics_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
