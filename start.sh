@@ -26,7 +26,7 @@ do
     
     echo "==================================="
     echo "                                   "
-    echo "Всё правильно (Everything is right) [Y/N]?"
+    echo "Всё правильно (Vsyo pravil'no) [Y/N]?"
     read set_check
     
     if [[ $set_check = Y ]]
@@ -34,6 +34,21 @@ do
         break
     fi    
 done
+
+if [[ $netconf = Y ]]
+then
+    source ./scripts/netconf.sh
+fi
+
+if [[ $set_jitsi = Y ]]
+then
+    source ./scripts/jitsi_inst.sh
+fi
+
+if [[ $set_nbics = Y ]]
+then
+    source ./scripts/nbics_inst.sh
+fi
 
 echo "Тестовый выход из цикла"
 
