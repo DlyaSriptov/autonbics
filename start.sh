@@ -37,18 +37,17 @@ done
 
 if [[ $netconf = Y ]]
 then
-    echo 'VirtualHost "guest.media3.nbics.net"' >> /etc/prosody/conf.avail/media3.nbics.net.cfg.lua
-    source ./scripts/netconf.sh
+    echo 'source ./scripts/netconf.sh' >> ./scripts/delta.sh    
 fi
 
 if [[ $set_jitsi = Y ]]
 then
-    source ./scripts/jitsi_inst.sh
+    echo 'source ./scripts/jitsi_inst.sh' >> ./scripts/delta.sh    
 fi
 
 if [[ $set_nbics = Y ]]
 then
-    source ./scripts/nbics_inst.sh
+    echo 'source ./scripts/nbics_inst.sh' >> ./scripts/delta.sh    
 fi
 
 echo "Тестовый выход из цикла"
