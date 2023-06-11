@@ -1,6 +1,6 @@
 {
   "AppSettings": {
-    "ApplicationPoolName": "DOMEN_NAME",
+    "ApplicationPoolName": "NAME_DOMEN",
     "SiteManagerPipeName": "VSM.Web.Core.Manager",
     "SiteManagerPipeTimeout": "5",
     "GuestLogin": "guest@guest.ru",
