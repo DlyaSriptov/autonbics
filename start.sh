@@ -1,24 +1,36 @@
 #!/bin/bash
 
-# Пожалуйста, ответьте на несколько вопросов.
-# 1. Настроить сеть (Y/N)?
-# 2. Установить Jitsi (Y/N)?
-# 3. Удалить Jitsi (Y/N)?
-# 4. Установить NBICS (Y/N)?
-# 5. Удалить NBICS (Y/N)?
-# 6. Всё правильно (Y/N)?
+netconf = Y
+set_jitsi = Y
+set_nbics = Y
+set_check = Y
 
 for ((;;))
 do
-
     echo "Пожалуйста, ответьте на несколько вопросов"
     echo "Настроить сеть (Y/N)?"
-
+    read $netconf
+            
     echo "Установить Jitsi (Y/N)?"
-
+    read $set_jitsi
+    
     echo "Установить NBICS (Y/N)?"
-
+    read $set_nbics
+    
+    echo "Настройка сети - " $netconf
+    echo "Установка Jitsi - " $set_jitsi
+    echo "Установка NBICS - " $set_nbics
+    
+    echo "==================================="
+    echo "                                   "
     echo "Всё правильно (Y/N)?"
+    read $set_check
+    
+    if [[ $set_check = Y ]]
+    then
+        break
+    fi    
 done
 
-source scripts/
+echo "Тестовый выход из цикла"
+
