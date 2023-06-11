@@ -1,21 +1,21 @@
 #!/bin/bash
 
-netconf = Y
-set_jitsi = Y
-set_nbics = Y
-set_check = Y
+netconf=Y
+set_jitsi=Y
+set_nbics=Y
+set_check=Y
 
 for ((;;))
 do
     echo "Пожалуйста, ответьте на несколько вопросов"
     echo "Настроить сеть (Y/N)?"
-    read $netconf
+    read netconf
             
     echo "Установить Jitsi (Y/N)?"
-    read $set_jitsi
+    read set_jitsi
     
     echo "Установить NBICS (Y/N)?"
-    read $set_nbics
+    read set_nbics
     
     echo "Настройка сети - " $netconf
     echo "Установка Jitsi - " $set_jitsi
@@ -24,7 +24,7 @@ do
     echo "==================================="
     echo "                                   "
     echo "Всё правильно (Y/N)?"
-    read $set_check
+    read set_check
     
     if [[ $set_check = Y ]]
     then
