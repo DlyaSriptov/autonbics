@@ -7,15 +7,15 @@ set_check=Y
 
 for ((;;))
 do
-    echo "Пожалуйста, ответьте на несколько вопросов:"
+    echo "Пожалуйста, ответьте на несколько вопросов (Please answer questions):"
     echo "-------------------------------------------"
-    echo "Настроить сеть (Y/N)?"
+    echo "Настроить сеть (Set up network) [Y/N]?"
     read netconf
             
-    echo "Установить Jitsi (Y/N)?"
+    echo "Установить Jitsi (Install Jitsi) [Y/N]?"
     read set_jitsi
     
-    echo "Установить NBICS (Y/N)?"
+    echo "Установить NBICS (Install NBICS) [Y/N]?"
     read set_nbics
     
     echo "==================================="
@@ -25,7 +25,7 @@ do
     
     echo "==================================="
     echo "                                   "
-    echo "Всё правильно (Y/N)?"
+    echo "Всё правильно (Everything is right) [Y/N]?"
     read set_check
     
     if [[ $set_check = Y ]]
