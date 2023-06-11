@@ -60,15 +60,15 @@ echo '#!/bin/bash' >> ./autonbics/scripts/delta.sh
 
 # Функции для заполнения опросника questions.txt
 # В опроснике - заготовленные ответы для настройки программ
-function set_netconf() {
+function setNetconf() {
 
 }
 
-function set_jitsi() {
+function setJitsi() {
 
 }
 
-function set_nbics() {
+function setNbics() {
 
 }
 
@@ -76,19 +76,19 @@ function set_nbics() {
 # delta.sh заполняется вызовами выбранных скриптов
 if [[ $q_netconf = Y ]]
 then
-    set_netconf()
+    setNetconf()
     echo 'source ./autonbics/scripts/netconf.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
 if [[ $q_jitsi = Y ]]
 then
-    set_jitsi()
+    setJitsi()
     echo 'source ./autonbics/scripts/jitsi_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
 if [[ $q_nbics = Y ]]
 then
-    set_nbics()
+    setNbics()
     echo 'source ./autonbics/scripts/nbics_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
