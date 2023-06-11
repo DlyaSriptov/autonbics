@@ -1,9 +1,9 @@
 #!/bin/bash
 
-netconf=Y
-set_jitsi=Y
-set_nbics=Y
-set_check=Y
+q_netconf=Y
+q_jitsi=Y
+q_nbics=Y
+q_check=Y
 
 for ((;;))
 do
@@ -11,25 +11,25 @@ do
     echo "Пожалуйста, ответьте на несколько вопросов (Otvet'te na voprosy):"
     echo "-------------------------------------------"
     echo "Настроить сеть (Nastroit' seti) [Y/N]?"
-    read netconf
+    read q_netconf
             
     echo "Установить Jitsi (Ustanovit' Jitsi) [Y/N]?"
-    read set_jitsi
+    read q_jitsi
     
     echo "Установить NBICS (Ustanovit' NBICS) [Y/N]?"
-    read set_nbics
+    read q_nbics
     
     echo "==================================="
-    echo "Настройка сети  (Nastrojka seti)  - " $netconf
-    echo "Установка Jitsi (Ustanovka Jitsi) - " $set_jitsi
-    echo "Установка NBICS (Ustanovka NBICS) - " $set_nbics
+    echo "Настройка сети  (Nastrojka seti)  - " $q_netconf
+    echo "Установка Jitsi (Ustanovka Jitsi) - " $q_jitsi
+    echo "Установка NBICS (Ustanovka NBICS) - " $q_nbics
     
     echo "==================================="
     echo "                                   "
     echo "Всё правильно (Vsyo pravil'no) [Y/N]?"
-    read set_check
+    read q_check
     
-    if [[ $set_check = Y ]]
+    if [[ $q_check = Y ]]
     then
         break
     fi    
@@ -38,20 +38,34 @@ done
 echo -n > ./autonbics/scripts/delta.sh
 echo '#!/bin/bash' >> ./autonbics/scripts/delta.sh
 
-if [[ $netconf = Y ]]
+function set_netconf {
+
+}
+
+function set_jitsi {
+
+}
+
+function set_nbics {
+
+}
+
+if [[ $q_netconf = Y ]]
 then
     echo 'source ./autonbics/scripts/netconf.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
-if [[ $set_jitsi = Y ]]
+if [[ $q_jitsi = Y ]]
 then
     echo 'source ./autonbics/scripts/jitsi_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
-if [[ $set_nbics = Y ]]
+if [[ $q_nbics = Y ]]
 then
     echo 'source ./autonbics/scripts/nbics_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
+
+source ./autonbics/scripts/delta.sh
 
 echo "Тестовый выход из цикла"
 
