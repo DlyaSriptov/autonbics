@@ -35,22 +35,22 @@ do
     fi    
 done
 
-echo -n > ./scripts/delta.sh
-echo '#!/bin/bash' >> ./scripts/delta.sh
+echo -n > ./autonbics/scripts/delta.sh
+echo '#!/bin/bash' >> ./autonbics/scripts/delta.sh
 
 if [[ $netconf = Y ]]
 then
-    echo 'source ./scripts/netconf.sh' >> ./scripts/delta.sh    
+    echo 'source ./autonbics/scripts/netconf.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
 if [[ $set_jitsi = Y ]]
 then
-    echo 'source ./scripts/jitsi_inst.sh' >> ./scripts/delta.sh    
+    echo 'source ./autonbics/scripts/jitsi_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
 if [[ $set_nbics = Y ]]
 then
-    echo 'source ./scripts/nbics_inst.sh' >> ./scripts/delta.sh    
+    echo 'source ./autonbics/scripts/nbics_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
 echo "Тестовый выход из цикла"
