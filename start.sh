@@ -6,6 +6,23 @@ q_jitsi=Y
 q_nbics=Y
 q_check=Y
 
+# Переменные для опросника
+netconfIpMask=A
+netconfGateway=A
+netconfDns=A
+
+jitsiNameDomain=A
+jitsiCertificate=A
+jitsiEmail=A
+jitsiJaas=A
+jitsiEmailCertbot=A
+jitsiLoginOrganizer=A
+jitsiPasswordOrganizer=A
+
+nbicsNameDomain=A
+nbicsNameDataBase=A
+nbicsPasswordDataBase=A
+
 # Цикл конфигурирования установки
 for ((;;))
 do
