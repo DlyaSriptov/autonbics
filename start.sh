@@ -61,15 +61,37 @@ echo '#!/bin/bash' >> ./autonbics/scripts/delta.sh
 # Функции для заполнения опросника questions.txt
 # В опроснике - заготовленные ответы для настройки программ
 function setNetconf() {
-
+    echo "-------------------------------------------"
+    echo "Настраиваем сеть (Nastraivaem set'):"
+    echo "-------------------------------------------"
+    read -p "IP-адрес/Маска (IP-adres/Maska): " netconfIpMask
+    read -p "Шлюз (Shlyuz): " netconfGateway
+    read -p "Серверы DNS (Servery DNS): " netconfDns
+    echo "==========================================="
 }
 
 function setJitsi() {
-
+    echo "-------------------------------------------"
+    echo "Настраиваем Jitsi (Nastraivaem Jitsi):"
+    echo "-------------------------------------------"
+    read -p "Доменное имя (Domennoe imya): " jitsiNameDomain
+    read -p "Введите имя: " jitsiCertificate
+    read -p "Введите имя: " jitsiEmail
+    read -p "Введите имя: " jitsiJaas
+    read -p "Введите имя: " jitsiEmailCertbot
+    read -p "Введите имя: " jitsiLoginOrganizer
+    read -p "Введите имя: " jitsiPasswordOrganizer
+    echo "==========================================="
 }
 
 function setNbics() {
-
+    echo "-------------------------------------------"
+    echo "Настраиваем NBICS (Nastraivaem NBICS):"
+    echo "-------------------------------------------"
+    read -p "Введите имя: " nbicsNameDomain
+    read -p "Введите имя: " nbicsNameDataBase
+    read -p "Введите имя: " nbicsPasswordDataBase
+    echo "==========================================="
 }
 
 # Три ветви для запонения delta.sh и вызова нужных функций
