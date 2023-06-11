@@ -1,10 +1,12 @@
 #!/bin/bash
 
+# Переменные для конфигурирования установки
 q_netconf=Y
 q_jitsi=Y
 q_nbics=Y
 q_check=Y
 
+# Цикл конфигурирования установки
 for ((;;))
 do
     echo "-------------------------------------------"
@@ -35,9 +37,12 @@ do
     fi    
 done
 
+# Чистим промежуточный файл delta.sh и вписываем первую строчку
 echo -n > ./autonbics/scripts/delta.sh
 echo '#!/bin/bash' >> ./autonbics/scripts/delta.sh
 
+# Функции для заполнения опросника questions.txt
+# В опроснике - заготовленные ответы для настройки программ
 function set_netconf() {
 
 }
