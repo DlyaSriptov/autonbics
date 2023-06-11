@@ -35,6 +35,9 @@ do
     fi    
 done
 
+echo -n > ./scripts/delta.sh
+echo '#!/bin/bash' >> ./scripts/delta.sh
+
 if [[ $netconf = Y ]]
 then
     echo 'source ./scripts/netconf.sh' >> ./scripts/delta.sh    
