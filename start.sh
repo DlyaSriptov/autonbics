@@ -20,7 +20,7 @@ do
     read set_nbics
     
     echo "==================================="
-    echo "Настройка сети (Nastrojka seti) - " $netconf
+    echo "Настройка сети  (Nastrojka seti)  - " $netconf
     echo "Установка Jitsi (Ustanovka Jitsi) - " $set_jitsi
     echo "Установка NBICS (Ustanovka NBICS) - " $set_nbics
     
