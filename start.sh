@@ -55,6 +55,8 @@ function set_nbics() {
 
 }
 
+# Три ветви для запонения delta.sh и вызова нужных функций
+# delta.sh заполняется вызовами выбранных скриптов
 if [[ $q_netconf = Y ]]
 then
     set_netconf()
@@ -73,6 +75,7 @@ then
     echo 'source ./autonbics/scripts/nbics_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
+# Вызов delta.sh, который запускает нужную конфигурацию установки программ
 source ./autonbics/scripts/delta.sh
 
 echo "Тестовый выход из цикла"
