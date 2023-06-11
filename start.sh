@@ -37,6 +37,7 @@ done
 
 if [[ $netconf = Y ]]
 then
+    echo 'VirtualHost "guest.media3.nbics.net"' >> /etc/prosody/conf.avail/media3.nbics.net.cfg.lua
     source ./scripts/netconf.sh
 fi
 
