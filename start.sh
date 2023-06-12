@@ -74,6 +74,9 @@ function setNetconf() {
     read -p "Серверы DNS (Servery DNS): " netconfDns
     echo "==========================================="
     
+    sed -i -e "s|1. IP-адрес/маска......... |1. IP-адрес/маска......... $netconfIpMask|g" ./autonbics/questions.txt
+    sed -i -e "s|2. Шлюз................... |2. Шлюз................... $netconfGateway|g" ./autonbics/questions.txt
+    sed -i -e "s|3. Серверы ДНС............ |3. Серверы ДНС............ $netconfDns|g" ./autonbics/questions.txt
     
 }
 
