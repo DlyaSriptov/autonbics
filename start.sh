@@ -73,6 +73,8 @@ function setNetconf() {
     read -p "Шлюз (Shlyuz): " netconfGateway
     read -p "Серверы DNS (Servery DNS): " netconfDns
     echo "==========================================="
+    
+    
 }
 
 function setJitsi() {
@@ -82,10 +84,10 @@ function setJitsi() {
     read -p "Доменное имя (Domennoe imya): " jitsiNameDomain
     read -p "Сертификат через Let’s Encrypt (Sertifikat cherez Let’s Encrypt) [Y/N]: " jitsiCertificate
     read -p "E-mail для Let’s Encrypt (E-mail dlya Let’s Encrypt): " jitsiEmail
-    #read -p "Добавить поддержку телефонии (Dobavit' podderzhku telefonii) [Y/N]: " jitsiJaas
-    #read -p "Введите имя: " jitsiEmailCertbot
-    read -p "Введите имя: " jitsiLoginOrganizer
-    read -p "Введите имя: " jitsiPasswordOrganizer
+    # read -p "Добавить поддержку телефонии (Dobavit' podderzhku telefonii) [Y/N]: " jitsiJaas
+    # read -p "..........: " jitsiEmailCertbot
+    read -p "Логин организатора конференции (Login organizatora konferencii): " jitsiLoginOrganizer
+    read -p "Пароль организатора конференции (Parol' organizatora konferencii): " jitsiPasswordOrganizer
     echo "==========================================="
 }
 
