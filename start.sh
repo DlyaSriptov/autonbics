@@ -112,26 +112,26 @@ function setNbics() {
     
     sed -i -e "s|1. Имя домена............. |1. Имя домена............. $nbicsNameDomain|g" ./autonbics/questions.txt
     sed -i -e "s|2. Имя базы данных........ |2. Имя базы данных........ $nbicsNameDataBase|g" ./autonbics/questions.txt
-    sed -i -e "s|3. Пароль базы данных..... |3. Пароль базы данных..... $nbicsPasswordDataBase" ./autonbics/questions.txt
+    sed -i -e "s|3. Пароль базы данных..... |3. Пароль базы данных..... $nbicsPasswordDataBase|g" ./autonbics/questions.txt
 }
 
 # Три ветви для запонения delta.sh и вызова нужных функций
 # delta.sh заполняется вызовами выбранных скриптов
 if [[ $q_netconf = Y ]]
 then
-    setNetconf()
+    setNetconf
     echo 'source ./autonbics/scripts/netconf.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
 if [[ $q_jitsi = Y ]]
 then
-    setJitsi()
+    setJitsi
     echo 'source ./autonbics/scripts/jitsi_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
 if [[ $q_nbics = Y ]]
 then
-    setNbics()
+    setNbics
     echo 'source ./autonbics/scripts/nbics_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
 
