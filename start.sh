@@ -1,10 +1,5 @@
 #!/bin/bash
 
-# Устанавливаем необходимые общие утилиты
-apt-get -y -q install curl
-apt-get -y -q install debconf-utils
-apt-get -y -q install apt-transport-https
-
 # Переменные для конфигурирования установки
 q_netconf=Y
 q_jitsi=Y
@@ -27,6 +22,11 @@ jitsiPasswordOrganizer=A
 nbicsNameDomain=A
 nbicsNameDataBase=A
 nbicsPasswordDataBase=A
+
+# Устанавливаем необходимые общие утилиты
+apt-get -y -q install curl
+apt-get -y -q install debconf-utils
+apt-get -y -q install apt-transport-https
 
 # Цикл конфигурирования установки
 for ((;;))
