@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# Устанавливаем необходимые общие утилиты
+apt-get -y -q install curl
+apt-get -y -q install debconf-utils
+apt-get -y -q install apt-transport-https
+
 # Переменные для конфигурирования установки
 q_netconf=Y
 q_jitsi=Y
@@ -75,9 +80,9 @@ function setJitsi() {
     echo "Настраиваем Jitsi (Nastraivaem Jitsi):"
     echo "-------------------------------------------"
     read -p "Доменное имя (Domennoe imya): " jitsiNameDomain
-    read -p "Введите имя: " jitsiCertificate
-    read -p "Введите имя: " jitsiEmail
-    read -p "Введите имя: " jitsiJaas
+    read -p "Сертификат через Let’s Encrypt (Sertifikat cherez Let’s Encrypt) [Y/N]: " jitsiCertificate
+    read -p "E-mail для Let’s Encrypt (E-mail dlya Let’s Encrypt): " jitsiEmail
+    read -p "Добавить поддержку телефонии (Dobavit' podderzhku telefonii) [Y/N]: " jitsiJaas
     read -p "Введите имя: " jitsiEmailCertbot
     read -p "Введите имя: " jitsiLoginOrganizer
     read -p "Введите имя: " jitsiPasswordOrganizer
@@ -88,9 +93,9 @@ function setNbics() {
     echo "-------------------------------------------"
     echo "Настраиваем NBICS (Nastraivaem NBICS):"
     echo "-------------------------------------------"
-    read -p "Введите имя: " nbicsNameDomain
-    read -p "Введите имя: " nbicsNameDataBase
-    read -p "Введите имя: " nbicsPasswordDataBase
+    read -p "Доменное имя (Domennoe imya): " nbicsNameDomain
+    read -p "Имя базы данных (Imya bazy dannyh): " nbicsNameDataBase
+    read -p "Пароль администратора базы данных (Parol' administratora bazy dannyh): " nbicsPasswordDataBase
     echo "==========================================="
 }
 
