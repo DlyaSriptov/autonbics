@@ -1,13 +1,10 @@
 #!/bin/bash
 
-apt-get -y -q install apt-transport-https curl
-
 iptables -I INPUT -p tcp --match multiport --dports 80,443 -j ACCEPT
 iptables -I INPUT -p tcp --dport 10000 -j ACCEPT
 iptables -I INPUT -p tcp --dport 5349 -j ACCEPT
 
 DEBIAN_FRONTEND=noninteractive apt-get  -y -q install iptables-persistent
-apt-get -y -q install curl
 netfilter-persistent save
 
 #apt-get -y -q install prosody
@@ -21,6 +18,10 @@ apt -y -q install lua5.2
 curl https://download.jitsi.org/jitsi-key.gpg.key | sudo sh -c 'gpg --dearmor > /usr/share/keyrings/jitsi-keyring.gpg'
 echo 'deb [signed-by=/usr/share/keyrings/jitsi-keyring.gpg] https://download.jitsi.org stable/' | sudo tee /etc/apt/sources.list.d/jitsi-stable.list > /dev/null
 apt update
+
+#echo “jitsi-videobridge jitsi-videobridge/jvb-hostname string YOUR-DNS-NAME” | debconf-set-selections
+#export DEBIAN_FRONTEND=noninteractive
+
 apt-get -y -q install jitsi-meet
 apt-get -y -q install socat certbot
 /usr/share/jitsi-meet/scripts/install-letsencrypt-cert.sh
