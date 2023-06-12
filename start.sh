@@ -66,6 +66,7 @@ echo '#!/bin/bash' >> ./autonbics/scripts/delta.sh
 # Функции для заполнения опросника questions.txt
 # В опроснике - заготовленные ответы для настройки программ
 function setNetconf() {
+    # Присваиваем переменным в качестве значений данные для настроек
     echo "-------------------------------------------"
     echo "Настраиваем сеть (Nastraivaem set'):"
     echo "-------------------------------------------"
@@ -74,10 +75,10 @@ function setNetconf() {
     read -p "Серверы DNS (Servery DNS): " netconfDns
     echo "==========================================="
     
+    # Эти данные для настроек потом вписываются в файл questions.txt
     sed -i -e "s|1. IP-адрес/маска......... |1. IP-адрес/маска......... $netconfIpMask|g" ./autonbics/questions.txt
     sed -i -e "s|2. Шлюз................... |2. Шлюз................... $netconfGateway|g" ./autonbics/questions.txt
-    sed -i -e "s|3. Серверы ДНС............ |3. Серверы ДНС............ $netconfDns|g" ./autonbics/questions.txt
-    
+    sed -i -e "s|3. Серверы ДНС............ |3. Серверы ДНС............ $netconfDns|g" ./autonbics/questions.txt    
 }
 
 function setJitsi() {
@@ -92,6 +93,12 @@ function setJitsi() {
     read -p "Логин организатора конференции (Login organizatora konferencii): " jitsiLoginOrganizer
     read -p "Пароль организатора конференции (Parol' organizatora konferencii): " jitsiPasswordOrganizer
     echo "==========================================="
+    
+    sed -i -e "s|1. Имя домена............. |1. Имя домена............. $jitsiNameDomain|g" ./autonbics/questions.txt
+    sed -i -e "s|2. Сертификат............. |2. Сертификат............. $jitsiCertificate|g" ./autonbics/questions.txt
+    sed -i -e "s|3. Эл. почта.............. |3. Эл. почта.............. $jitsiEmail|g" ./autonbics/questions.txt
+    sed -i -e "s|6. Логин организатора..... |6. Логин организатора..... $jitsiLoginOrganizer|g" ./autonbics/questions.txt
+    sed -i -e "s|7. Пароль организатора.... |7. Пароль организатора.... $jitsiPasswordOrganizer|g" ./autonbics/questions.txt
 }
 
 function setNbics() {
@@ -102,6 +109,10 @@ function setNbics() {
     read -p "Имя базы данных (Imya bazy dannyh): " nbicsNameDataBase
     read -p "Пароль администратора базы данных (Parol' administratora bazy dannyh): " nbicsPasswordDataBase
     echo "==========================================="
+    
+    sed -i -e "s|1. Имя домена............. |1. Имя домена............. $nbicsNameDomain|g" ./autonbics/questions.txt
+    sed -i -e "s|2. Имя базы данных........ |2. Имя базы данных........ $nbicsNameDataBase|g" ./autonbics/questions.txt
+    sed -i -e "s|3. Пароль базы данных..... |3. Пароль базы данных..... $nbicsPasswordDataBase" ./autonbics/questions.txt
 }
 
 # Три ветви для запонения delta.sh и вызова нужных функций
