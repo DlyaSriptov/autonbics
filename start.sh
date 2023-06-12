@@ -94,7 +94,7 @@ function setJitsi() {
     read -p "Пароль организатора конференции (Parol' organizatora konferencii): " jitsiPasswordOrganizer
     echo "==========================================="
     
-    sed -i -e "s|1. Имя домена............. |1. Имя домена............. $jitsiNameDomain|g" ./autonbics/questions.txt
+    sed -i -e "s|1. Имя домена Jitsi....... |1. Имя домена Jitsi....... $jitsiNameDomain|g" ./autonbics/questions.txt
     sed -i -e "s|2. Сертификат............. |2. Сертификат............. $jitsiCertificate|g" ./autonbics/questions.txt
     sed -i -e "s|3. Эл. почта.............. |3. Эл. почта.............. $jitsiEmail|g" ./autonbics/questions.txt
     sed -i -e "s|6. Логин организатора..... |6. Логин организатора..... $jitsiLoginOrganizer|g" ./autonbics/questions.txt
@@ -110,7 +110,7 @@ function setNbics() {
     read -p "Пароль администратора базы данных (Parol' administratora bazy dannyh): " nbicsPasswordDataBase
     echo "==========================================="
     
-    sed -i -e "s|1. Имя домена............. |1. Имя домена............. $nbicsNameDomain|g" ./autonbics/questions.txt
+    sed -i -e "s|1. Имя домена NBICS....... |1. Имя домена NBICS....... $nbicsNameDomain|g" ./autonbics/questions.txt
     sed -i -e "s|2. Имя базы данных........ |2. Имя базы данных........ $nbicsNameDataBase|g" ./autonbics/questions.txt
     sed -i -e "s|3. Пароль базы данных..... |3. Пароль базы данных..... $nbicsPasswordDataBase|g" ./autonbics/questions.txt
 }
