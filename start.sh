@@ -62,19 +62,23 @@ echo '#!/bin/bash' >> ./autonbics/scripts/delta.sh
 echo -n > ./autonbics/questions.txt
 cp ./autonbics/files/template_questions.txt ./autonbics/questions.txt
 
-# Проверка файла с настройками (если не пустой - просить брать настройки оттуда)
-## checkFileWithPreset=$(wc -m ./autonbics/files/preset_questions.txt | grep -o '[0-9]*')
-## questPreset=Y
-## if [[ $checkFileWithPreset > 0 ]]
-## then
-    ## echo "У вас сохранены предыдущие настройки. Использовать их? [Y/N]"
-    ## echo "U vas sohraneny predydushchie nastrojki. Ispol'zovat' ih? [Y/N]"
-    ## read questPreset
-    ## if [[ $questPreset = Y ]]
-    ## then
-        
-    ## fi
-## fi
+# Проверка файла с настройками (если не пустой - предложить показать их)
+checkFileWithPreset=$(wc -m ./autonbics/files/preset_questions.txt | grep -o '[0-9]*')
+questPreset=Y
+if [[ $checkFileWithPreset > 0 ]]
+then
+    echo "У вас сохранены предыдущие настройки. Показать их? [Y/N]"
+    echo "U vas sohraneny predydushchie nastrojki. Pokazat' ih? [Y/N]"
+    read questPreset
+    if [[ $questPreset = Y ]]
+    then
+        echo "==========================================="
+        cat ./autonbics/files/preset_questions.txt
+        echo "==========================================="
+        echo "==========================================="
+        echo "==========================================="
+    fi
+fi
 
 # Функции для заполнения опросника questions.txt
 # В опроснике - заготовленные ответы для настройки программ
