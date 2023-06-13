@@ -76,7 +76,6 @@ then
         cat ./autonbics/files/preset_questions.txt
         echo "==========================================="
         echo "==========================================="
-        echo "==========================================="
     fi
 fi
 
@@ -151,6 +150,10 @@ then
     setNbics
     echo 'source ./autonbics/scripts/nbics_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
+
+# Копирование введённых данных в файл preset_questions.txt
+echo -n > ./autonbics/files/preset_questions.txt
+cp ./autonbics/questions.txt ./autonbics/files/preset_questions.txt
 
 # Устанавливаем необходимые общие утилиты
 apt-get -y -q install curl
