@@ -23,11 +23,6 @@ nbicsNameDomain=A
 nbicsNameDataBase=A
 nbicsPasswordDataBase=A
 
-# Устанавливаем необходимые общие утилиты
-apt-get -y -q install curl
-apt-get -y -q install debconf-utils
-apt-get -y -q install apt-transport-https
-
 # Цикл конфигурирования установки
 for ((;;))
 do
@@ -138,6 +133,11 @@ then
     setNbics
     echo 'source ./autonbics/scripts/nbics_inst.sh' >> ./autonbics/scripts/delta.sh    
 fi
+
+# Устанавливаем необходимые общие утилиты
+apt-get -y -q install curl
+apt-get -y -q install debconf-utils
+apt-get -y -q install apt-transport-https
 
 # Вызов delta.sh, который запускает нужную конфигурацию установки программ
 source ./autonbics/scripts/delta.sh
