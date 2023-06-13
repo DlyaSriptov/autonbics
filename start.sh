@@ -63,6 +63,10 @@ done
 echo -n > ./autonbics/scripts/delta.sh
 echo '#!/bin/bash' >> ./autonbics/scripts/delta.sh
 
+# Удаление ранее введённых данных (если были) из файла questions.txt
+echo -n > ./autonbics/questions.txt
+cp ./autonbics/files/template_questions.txt ./autonbics/questions.txt
+
 # Функции для заполнения опросника questions.txt
 # В опроснике - заготовленные ответы для настройки программ
 function setNetconf() {
