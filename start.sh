@@ -62,6 +62,13 @@ echo '#!/bin/bash' >> ./autonbics/scripts/delta.sh
 echo -n > ./autonbics/questions.txt
 cp ./autonbics/files/template_questions.txt ./autonbics/questions.txt
 
+# Проверка файла с настройками (если не пустой - просить брать настройки оттуда)
+checkFileWithPreset=$(wc -m ./autonbics/files/preset_questions.txt | grep -o '[0-9]*')
+if [[ $checkFileWithPreset > 0 ]]
+    then
+        echo "Файл не пустой. Он содержит" $testvar "символов."
+    fi
+
 # Функции для заполнения опросника questions.txt
 # В опроснике - заготовленные ответы для настройки программ
 function setNetconf() {
