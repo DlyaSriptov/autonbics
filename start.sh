@@ -65,7 +65,7 @@ cp ./autonbics/files/template_questions.txt ./autonbics/questions.txt
 # Проверка файла с настройками (если не пустой - предложить показать их)
 checkFileWithPreset=$(wc -m ./autonbics/files/preset_questions.txt | grep -o '[0-9]*')
 questPreset=Y
-if [[ $checkFileWithPreset > 0 ]]
+if [[ $checkFileWithPreset > 700 ]]
 then
     echo "У вас сохранены предыдущие настройки. Показать их? [Y/N]"
     echo "U vas sohraneny predydushchie nastrojki. Pokazat' ih? [Y/N]"
