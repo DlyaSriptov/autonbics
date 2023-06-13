@@ -157,11 +157,12 @@ cp ./autonbics/questions.txt ./autonbics/files/preset_questions.txt
 
 # Устанавливаем необходимые общие утилиты
 apt-get -y -q install curl
+apt-get -y -q install unzip
 apt-get -y -q install debconf-utils
 apt-get -y -q install apt-transport-https
 
 # Вызов delta.sh, который запускает нужную конфигурацию установки программ
 source ./autonbics/scripts/delta.sh
 
-echo "Тестовый выход из цикла"
+#echo "Тестовый выход из цикла"
 
